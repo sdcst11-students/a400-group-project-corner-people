@@ -1,10 +1,4 @@
 #!python3
-    # Will display instructions
-    # input parameters: none needed
-    # output parameters: None
-    # Author:
-    # Modified:
-
 
 def instructions():
    while True:
@@ -14,10 +8,11 @@ def instructions():
          print ("Alright, lets go!")
          break 
       elif instructions== "yes":
-         print ("insert instructions")
+         print ("These are the instructions! The program will ask you what you want to calculate\nThen, it will ask you the inputs needed.\nLet's Go! ")
          break 
       else: 
-        # print ("Invalid input. Please enter yes or no")
+         print ("Invalid input. Please enter yes or no")
+                 
+instructions()
                   
-      #instructions()
-                  
+
