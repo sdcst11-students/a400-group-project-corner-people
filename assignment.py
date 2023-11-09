@@ -10,6 +10,9 @@ def title():
     # Author: Copper
     # Modified:
     # title
+    titlePage='\033[1;32m\n\n   Kimby\'s Python Calculator\n      By: Ruby and Kimmie\n          Calculates:'
+    calculators='\033[1;34m\n            Volume,\n         Surface Area,\n           And More!\n'
+    print(titlePage,calculators)
     return None
 
 def instructions():
