@@ -23,7 +23,7 @@ def instructions():
     # Author:
     # Modified:
     while True:
-        instructions = input("Do you want the instructions? yes or no: ").lower().replace(" ", "")
+        instructions = input("\033[1;35;40m Do you want the instructions? yes or no: ").lower().replace(" ", "")
         if instructions == "no":
            print ("Alright, lets go!")
            break 
