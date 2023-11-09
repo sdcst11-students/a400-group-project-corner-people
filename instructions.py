@@ -1,39 +1,5 @@
 #!python3
-<<<<<<< HEAD
-def instructions():
-    intrustions= input("Would you like to see the instructions for this calculator? Yes or No")
-    intrustions = strip(intrustions)
-    if intrustions == "yes":
-        instructions = "This is calculator can help you with diffcult solutions. \nYou can calculate the volume and surface area of these four shapes: Sphere, cube, rectangular prism, cone"
-        print (instructions)
-    else:
-        pick: 
-=======
-    # Will display instructions
-    # input parameters: none needed
-    # output parameters: None
-    # Author:
-    # Modified:
 
-
-<<<<<<< HEAD
-#def instructions():
-   # while True:
-instructions = input("Do you want the instructions? yes or no: ").lower().replace(" ", "")
-print (instructions)
-        #if instructions == "no":
-            #print ("Alright, lets go!")
-           # break 
-        #elif instructions== "yes":
-           # print ("insert instructions")
-            #break 
-      #  else: 
-           # print ("Invalid input. Please enter yes or no")
-            
-#instructions()
-            
->>>>>>> e891cdb169cc95cd20de30fa2590633af7778c8d
-=======
 def instructions():
    while True:
       instructions = input("Do you want the instructions? yes or no: ").lower().replace(" ", "")
@@ -42,11 +8,11 @@ def instructions():
          print ("Alright, lets go!")
          break 
       elif instructions== "yes":
-         print ("insert instructions")
+         print ("These are the instructions! The program will ask you what you want to calculate\nThen, it will ask you the inputs needed.\nLet's Go! ")
          break 
       else: 
-        # print ("Invalid input. Please enter yes or no")
+         print ("Invalid input. Please enter yes or no")
+                 
+instructions()
                   
-      #instructions()
-                  
->>>>>>> d3135d45ef912914bfa10b063d53d05c15163ae6
+
