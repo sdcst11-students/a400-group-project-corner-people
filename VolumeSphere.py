@@ -2,7 +2,7 @@
 import math 
 def Vsphere():
     while True: 
-        rad= input("Please input your radius, it must be a positive number: ")
+        rad= input("We will calculate the volume of your sphere! \nPlease input your radius, it must be a positive number: ")
         try:
             rad=float(rad)
             if rad <= 0: 

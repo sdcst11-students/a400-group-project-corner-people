@@ -1,7 +1,7 @@
-import math 
+
 def Vcube():
     while True: 
-        side= input("Please input your side, it must be a positive number: ")
+        side= input("We will calculate the volume of your cube! \nPlease input your side, it must be a positive number: ")
         try:
             side=float(side)
             if side <= 0: 
