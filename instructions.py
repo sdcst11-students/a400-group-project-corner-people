@@ -16,6 +16,7 @@ def instructions():
     # Modified:
 
 
+<<<<<<< HEAD
 #def instructions():
    # while True:
 instructions = input("Do you want the instructions? yes or no: ").lower().replace(" ", "")
@@ -32,3 +33,20 @@ print (instructions)
 #instructions()
             
 >>>>>>> e891cdb169cc95cd20de30fa2590633af7778c8d
+=======
+def instructions():
+   while True:
+      instructions = input("Do you want the instructions? yes or no: ").lower().replace(" ", "")
+      
+      if instructions == "no":
+         print ("Alright, lets go!")
+         break 
+      elif instructions== "yes":
+         print ("insert instructions")
+         break 
+      else: 
+        # print ("Invalid input. Please enter yes or no")
+                  
+      #instructions()
+                  
+>>>>>>> d3135d45ef912914bfa10b063d53d05c15163ae6
