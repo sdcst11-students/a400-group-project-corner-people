@@ -1,0 +1,19 @@
+import math 
+def Vcone():
+    print ("We will calculate the volume of your cone!")
+    while True: 
+        rad= input('What is the radius of your cone?\n')
+        height= input('What is the height of your cone?\n')
+        try:
+            rad=float(rad)
+            height=float(height)
+            if rad <= 0 or height <= 0:
+                print ("Invalid Input(s). Please enter correct input(s): ")
+            else:
+                answerVCone= round(math.pi * (rad **2)* (height/3),2)
+                print (f'The volume of a cone with a radius of {rad} and a height of {height} is {answerVCone}. ')
+                break
+        except:
+                print ("Invalid Input(s). Please enter correct input(s): ")
+
+Vcone()

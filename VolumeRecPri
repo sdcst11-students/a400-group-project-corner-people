@@ -1,0 +1,21 @@
+def VrecPri():
+    print("We will calculate the volume of your rectangular prism!")
+    while True: 
+        l=input('What is the length of your prism?\n')
+        w=input('What is the width of your prism?\n')
+        h=input('What is the height of your prism?\n')
+        try:
+            l=float(l)
+            w=float(w)
+            h=float(h)
+            if l<=0 or w<=0 or h<=0:
+                print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
+                break
+            answerVRP= l*h*w
+            print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
+            break 
+        except:
+            print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
+
+
+VrecPri()
