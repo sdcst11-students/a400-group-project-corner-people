@@ -39,7 +39,6 @@ def start(): #Player chooses which function to execute
                 print('Invalid input\nYou must input an integer between 1 and 9.\n')
         except:
             print('Invalid input\nYou must input an integer between 1 and 9.\n')
-choice=start()
 
 def TestValues(a): #All values in these calculations must be positive numbers.
     try:
@@ -84,7 +83,41 @@ def Vcube():
                 print ("Invalid Input. Please enter correct input: ")
     return None
 
+def VrecPri():
+    print("We will calculate the volume of your rectangular prism!")
+    while True: 
+        l=input('What is the length of your prism?\n')
+        w=input('What is the width of your prism?\n')
+        h=input('What is the height of your prism?\n')
+        try:
+            l=float(l)
+            w=float(w)
+            h=float(h)
+            if l<=0 or w<=0 or h<=0:
+                print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
+                break
+            answerVRP= l*h*w
+            print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
+            break 
+        except:
+            print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
 
+def Vcone():
+    print ("We will calculate the volume of your cone!")
+    while True: 
+        rad= input('What is the radius of your cone?\n')
+        height= input('What is the height of your cone?\n')
+        try:
+            rad=float(rad)
+            height=float(height)
+            if rad <= 0 or height <= 0:
+                print ("Invalid Input(s). Please enter correct input(s): ")
+            else:
+                answerVCone= round(math.pi * (rad **2)* (height/3),2)
+                print (f'The volume of a cone with a radius of {rad} and a height of {height} is {answerVCone}. ')
+                break
+        except:
+                print ("Invalid Input(s). Please enter correct input(s): ")
 
 def SA_Cone():
     print('\nWe will calculate the surface area of your cone!\nYou will need to input 2 positive values\nfor the radius of the base, and height.')
@@ -135,6 +168,7 @@ def SA_RecPrism():
                 break
             answerSAP=2 * (l*w+l*h+w*h)
             print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerSAP}')
+            break
         except:
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
 
@@ -154,6 +188,37 @@ def SA_Sphere():
         except:
             print ("Invalid Input. Please enter valid input: ")
 
+def PyTheorem():
+    print('We will find the missing side length of a right\ntriangle using the pythagorean theorem. You\nmust input 2 positive values.')
+    while True:
+        length=input('Are you looking for the hypotenuse, which is\nthe side opposite to the right angle? Yes/No: ')
+        length=length.lower()
+        length=length.replace(' ','')
+        if length=='yes':
+            side1=input('What is the first side length: ')
+            side2=input('What is the second side length: ')
+            try:
+                side1=float(side1)
+                side2=float(side2)
+                hyp=math.sqrt(side1**2+side2**2)
+                print(f'The hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.')
+                break
+            except:
+                print('Invalid inputs')
+        elif length=='no':
+            hyp=input('What is the hypotenuse length: ')
+            side1=input('What is the known side length: ')
+            try:
+                hyp=float(hyp)
+                side1=float(side1)
+                side2=math.sqrt(hyp**2-side1**2)
+                print(f'The missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
+                break
+            except:
+                print('Invalid input(s).')
+        else:
+            print('Invalid answer, you must input either yes or no.')
+
 def main():
     """
     main block of code that will run your program and control program flow
@@ -162,12 +227,29 @@ def main():
     """
     title()
     instructions()
-    Vsphere()
-    Vcube()
-    SA_Cone()
-    SA_cube()
-    SA_RecPrism()
-    SA_Sphere()
+    while True:
+        choice=start()
+        functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Cone,SA_cube,SA_RecPrism,SA_Sphere,PyTheorem)
+        functionList[choice]()
+        end=input('Do you wish to end your session? yes or no: ')
+        end=end.lower()
+        end=end.replace(' ','')
+        if end=='yes':
+            break
+
+'''
+Volume Calculations
+Sphere==>1
+Cube==>2
+Rectangular Prism==>3
+Cone==>4'
+Surface Area Calculations:
+Sphere==>5
+Cube==>6
+Rectangular Prism==>7
+Cone==>8'
+        PT='\n\nPythagorean Theorem==>9\n'
+'''
 
 if __name__ == "__main__":
     main()
