@@ -2,6 +2,7 @@
 #sphere (variables:Radius) (Formula:4piR^2)
 import math
 def SA_Sphere():
+    print('We will calculate the surface area of a sphere.\nYou will need to input 1 positive value for the radius.')
     while True: 
         rad= input("Please input your radius, it must be a positive value: ")
         try:
