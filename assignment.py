@@ -111,7 +111,7 @@ def Vcone():
                 print ("Invalid Input(s). Please enter correct input(s).\n ")
 
 def SA_Cone():
-    print('\nWe will calculate the surface area of your cone!\nYou will need to input 2 positive values\nfor the radius of the base, and height.')
+    print('\nWe will calculate the surface area of your cone!\nYou will need to input 2 positive values\nfor the radius of the base, and height.\n')
     while True: 
         rad= input("Please input the radius of the base, it must be a positive number: ")
         height=input("Please input the height of the cone: ")
@@ -119,7 +119,7 @@ def SA_Cone():
             rad=float(rad)
             height=float(height)
             if rad <= 0 or height <= 0: 
-                print ("Invalid Input(s). Please enter valid value(s). ")
+                print ("Invalid Input(s). Please enter valid value(s).\n ")
             else:
                 answerSACone= (math.pi*rad**2)+math.sqrt(rad**2 + height **2)*rad*math.pi
                 answerSACone=round(answerSACone,2)
@@ -127,7 +127,7 @@ def SA_Cone():
                 
                 break
         except:
-                print ("Invalid Input(s). Please enter valid number(s). ")
+                print ("Invalid Input(s). Please enter valid number(s).\n ")
 
 def SA_cube():
     print('\nWe will calculate the surface area of your cube! \n')
