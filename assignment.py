@@ -40,17 +40,6 @@ def start(): #Player chooses which function to execute
         except:
             print('Invalid input\nYou must input an integer between 1 and 9.\n')
 
-def TestValues(a): #All values in these calculations must be positive numbers.
-    try:
-        a=float(a)
-        if a>0:
-            return True
-        else:
-            print('That is not a valid input.')
-            return False
-    except:
-        print('That is not a valid input.')
-        return False
 
 #these are all the specific calculation functions 
 def Vsphere():
@@ -200,9 +189,12 @@ def PyTheorem():
             try:
                 side1=float(side1)
                 side2=float(side2)
-                hyp=math.sqrt(side1**2+side2**2)
-                print(f'The hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.')
-                break
+                if side1 <= 0 or side2<= 0: 
+                    print ("Invalid Input(s). Please enter valid input: ")
+                else:
+                    hyp=math.sqrt(side1**2+side2**2)
+                    print(f'The hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.')
+                    break
             except:
                 print('Invalid inputs')
         elif length=='no':
@@ -211,9 +203,12 @@ def PyTheorem():
             try:
                 hyp=float(hyp)
                 side1=float(side1)
-                side2=math.sqrt(hyp**2-side1**2)
-                print(f'The missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
-                break
+                if side1 <= 0 or hyp<= 0: 
+                    print ("Invalid Input(s). Please enter valid input: ")
+                else:
+                    side2=math.sqrt(hyp**2-side1**2)
+                    print(f'The missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
+                    break
             except:
                 print('Invalid input(s).')
         else:

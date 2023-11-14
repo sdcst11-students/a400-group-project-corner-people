@@ -12,9 +12,10 @@ def SA_RecPrism():
             h=float(h)
             if l<=0 or w<=0 or h<=0:
                 print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
+            else:
+                answerSAP=2 * (l*w+l*h+w*h)
+                print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerSAP}')
                 break
-            answerSAP=2 * (l*w+l*h+w*h)
-            print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerSAP}')
         except:
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
 
