@@ -25,10 +25,10 @@ def instructions():
 
 def start(): #Player chooses which function to execute
     while True:
-        Ins='\033[0;37;42m Type a number to commence the specific function.\n:'
-        VC='\n  Volume Calculations:\n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
-        SAC='\n\nSurface Area Calculations:\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
-        PT='\n\nPythagorean Theorem==>9\n'
+        Ins='\033[1;31;40m Type a number to commence the specific function.\n:'
+        VC='\033[1;31;40m  \n  Volume Calculations:\n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
+        SAC='\033[1;31;40m  \n\nSurface Area Calculations:\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
+        PT='\033[1;31;40m  \n\nPythagorean Theorem==>9\n'
         TotalInstructions=VC+SAC+PT+Ins
         choice=input(TotalInstructions)
         try:
@@ -60,7 +60,7 @@ def Vsphere():
 
 def Vcube():
     while True: 
-        side= input("\nWe will calculate the volume of your cube! \nPlease input your side, it must be a positive number: ")
+        side= input("\033[1;33;40m\nWe will calculate the volume of your cube! \nPlease input your side, it must be a positive number: ")
         try:
             side=float(side)
             if side <= 0: 
@@ -75,7 +75,7 @@ def Vcube():
     return None
 
 def VrecPri():
-    print("We will calculate the volume of your rectangular prism!")
+    print("\033[1;32;40m We will calculate the volume of your rectangular prism!")
     while True: 
         l=input('What is the length of your prism?\n')
         w=input('What is the width of your prism?\n')
@@ -94,7 +94,7 @@ def VrecPri():
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
 
 def Vcone():
-    print ("We will calculate the volume of your cone!")
+    print ("\033[1;30;40m We will calculate the volume of your cone!")
     while True: 
         rad= input('What is the radius of your cone?\n')
         height= input('What is the height of your cone?\n')
@@ -111,7 +111,7 @@ def Vcone():
                 print ("Invalid Input(s). Please enter correct input(s): ")
 
 def SA_Cone():
-    print('\nWe will calculate the surface area of your cone!\nYou will need to input 2 positive values\nfor the radius of the base, and height.')
+    print('\033[1;32;40m\nWe will calculate the surface area of your cone!\nYou will need to input 2 positive values\nfor the radius of the base, and height.')
     while True: 
         rad= input("Please input the radius of the base, it must be a positive number: ")
         height=input("Please input the height of the cone: ")
