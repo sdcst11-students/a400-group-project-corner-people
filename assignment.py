@@ -25,7 +25,7 @@ def instructions():
 
 def start(): #Player chooses which function to execute
     while True:
-        Ins='Type a number to commence the specific function.\n:'
+        Ins='\033[0;37;42m Type a number to commence the specific function.\n:'
         VC='\n  Volume Calculations:\n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
         SAC='\n\nSurface Area Calculations:\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
         PT='\n\nPythagorean Theorem==>9\n'
@@ -44,9 +44,9 @@ def start(): #Player chooses which function to execute
 #these are all the specific calculation functions 
 def Vsphere():
         while True: 
-            rad= input(" \033[0;33;47m \nWe will calculate the volume of your sphere! \nPlease input your radius, it must be a positive number: ")
+            rad= input("\033[1;37;44m \nWe will calculate the volume of your sphere! \nPlease input your radius, it must be a positive number: ")
             try:
-                rad=float(rad)
+                rad=float(rad) 
                 if rad <= 0: 
                     print ("Invalid Input. Please enter correct input: ")
                 else:
