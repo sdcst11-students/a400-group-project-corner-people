@@ -51,6 +51,7 @@ def Vsphere():
                     print ("Invalid Input. Please enter correct input: ")
                 else:
                     answerVS= round ((4/3)* math.pi* (rad ** 3), 2)
+                    answerVS=round(answerVS,2)
                     print (f'The volume of a sphere with radius {rad} is {answerVS}')
                     break 
             except:
@@ -66,6 +67,7 @@ def Vcube():
                 print ("Invalid Input. Please enter correct input: ")
             else:
                 answerVC= side**3
+                answerVC=round(answerVC,2)
                 print (f'The volume of a cube with a side of {side} is {answerVC}')
                 break
         except:
@@ -84,10 +86,10 @@ def VrecPri():
             h=float(h)
             if l<=0 or w<=0 or h<=0:
                 print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
-                break
-            answerVRP= l*h*w
-            print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
-            break 
+            else:
+                answerVRP= round(l*h*w,2)
+                print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
+                break 
         except:
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
 
@@ -220,17 +222,25 @@ def main():
     You will need to include a while loop to keep repeating the commands until
     the user chooses to exit
     """
+    x=True
     title()
     instructions()
-    while True:
+    while x==True: 
         choice=start()
-        functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Cone,SA_cube,SA_RecPrism,SA_Sphere,PyTheorem)
+        functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Sphere,SA_cube,SA_RecPrism,SA_Cone,PyTheorem)
         functionList[choice]()
-        end=input('Do you wish to end your session? yes or no: ')
-        end=end.lower()
-        end=end.replace(' ','')
-        if end=='yes':
-            break
+        while True: #Asks whether you want to continue or end your session
+            end=input('\nDo you wish to end your session? yes or no: ')
+            end=end.lower()
+            end=end.replace(' ','')
+            if end=='yes':
+                x=False
+                print('\nYou have ended your session.')
+                break
+            elif end=='no':
+                break
+            else:
+                print('Invalid Input')
 
 
 if __name__ == "__main__":
