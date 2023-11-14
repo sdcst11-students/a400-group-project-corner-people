@@ -86,10 +86,10 @@ def VrecPri():
             h=float(h)
             if l<=0 or w<=0 or h<=0:
                 print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
-                break
-            answerVRP= round(l*h*w,2)
-            print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
-            break 
+            else:
+                answerVRP= round(l*h*w,2)
+                print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
+                break 
         except:
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
 
@@ -225,11 +225,11 @@ def main():
     x=True
     title()
     instructions()
-    while x==True:
+    while x==True: 
         choice=start()
-        functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Cone,SA_cube,SA_RecPrism,SA_Sphere,PyTheorem)
+        functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Sphere,SA_cube,SA_RecPrism,SA_Cone,PyTheorem)
         functionList[choice]()
-        while True:
+        while True: #Asks whether you want to continue or end your session
             end=input('\nDo you wish to end your session? yes or no: ')
             end=end.lower()
             end=end.replace(' ','')
