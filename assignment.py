@@ -192,7 +192,7 @@ def PyTheorem():
                 if side1 <= 0 or side2<= 0: 
                     print ("Invalid Input(s). Please enter valid input: ")
                 else:
-                    hyp=math.sqrt(side1**2+side2**2)
+                    hyp= round(math.sqrt(side1**2+side2**2,2))
                     print(f'The hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.')
                     break
             except:
@@ -206,7 +206,7 @@ def PyTheorem():
                 if side1 <= 0 or hyp<= 0: 
                     print ("Invalid Input(s). Please enter valid input: ")
                 else:
-                    side2=math.sqrt(hyp**2-side1**2)
+                    side2=round(math.sqrt(hyp**2-side1**2),2)
                     print(f'The missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
                     break
             except:
@@ -232,19 +232,6 @@ def main():
         if end=='yes':
             break
 
-'''
-Volume Calculations
-Sphere==>1
-Cube==>2
-Rectangular Prism==>3
-Cone==>4'
-Surface Area Calculations:
-Sphere==>5
-Cube==>6
-Rectangular Prism==>7
-Cone==>8'
-        PT='\n\nPythagorean Theorem==>9\n'
-'''
 
 if __name__ == "__main__":
     main()
