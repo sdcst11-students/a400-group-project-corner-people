@@ -136,13 +136,13 @@ def SA_cube():
         try:
             side=float(side)
             if side <= 0: 
-                print ("Invalid Input. Please enter valid value: ")
+                print ("Invalid Input. Please enter valid value.\n ")
             else:
                 answerSAC= 6 * side **2
-                print (f'The surface area of a cube with a side length of {side} is {answerSAC}.')
+                print (f'\nThe surface area of a cube with a side length of {side} is {answerSAC}.')
                 break
         except:
-                print ("Invalid Input. Please enter valid number: ")
+                print ("Invalid Input. Please enter valid number\n ")
 
 def SA_RecPrism():
     print('\nWe will calculate the surface area of a rectangular prism.\nYou will need to input 3 positive values for the length,\nwidth, and height:')
@@ -156,18 +156,18 @@ def SA_RecPrism():
             h=float(h)
             if l<=0 or w<=0 or h<=0:
                 print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.\n')
+            else:
+                answerSAP=2 * (l*w+l*h+w*h)
+                answerSAP=round(answerSAP,2)
+                print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerSAP}\n')
                 break
-            answerSAP=2 * (l*w+l*h+w*h)
-            answerSAP=round(answerSAP,2)
-            print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerSAP}\n')
-            break
         except:
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.\n')
 
 def SA_Sphere():
-    print('\nWe will calculate the surface area of a sphere.\nYou will need to input 1 positive value for the radius.')
+    print('\nWe will calculate the surface area of a sphere.\nYou will need to input 1 positive value for the radius.\n')
     while True: 
-        rad= input("\nPlease input your radius, it must be a positive value: ")
+        rad= input("Please input your radius, it must be a positive value: ")
         try:
             rad=float(rad)
             if rad <= 0: 
