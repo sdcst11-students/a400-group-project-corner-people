@@ -130,7 +130,7 @@ def SA_Cone():
                 print ("Invalid Input(s). Please enter valid number(s). ")
 
 def SA_cube():
-    print('\nWe will calculate the surface area of your cube! \nPlease input your side, it must be a positive number: .')
+    print('\nWe will calculate the surface area of your cube! \n')
     while True: 
         side= input("Please input your side, it must be a positive number: ")
         try:
@@ -158,6 +158,7 @@ def SA_RecPrism():
                 print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
                 break
             answerSAP=2 * (l*w+l*h+w*h)
+            answerSAP=round(answerSAP,2)
             print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerSAP}')
             break
         except:
