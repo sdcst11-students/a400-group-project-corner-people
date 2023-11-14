@@ -44,18 +44,18 @@ def start(): #Player chooses which function to execute
 #these are all the specific calculation functions 
 def Vsphere():
         while True: 
-            rad= input(" \033[0;33;47m \nWe will calculate the volume of your sphere! \nPlease input your radius, it must be a positive number: ")
+            rad= input(" \033[0;33;47mWe will calculate the volume of your sphere! \nPlease input your radius, it must be a positive number: ")
             try:
                 rad=float(rad)
                 if rad <= 0: 
-                    print ("Invalid Input. Please enter correct input: ")
+                    print ("\nInvalid Input. Please enter correct input. \n")
                 else:
                     answerVS= round ((4/3)* math.pi* (rad ** 3), 2)
                     answerVS=round(answerVS,2)
                     print (f'The volume of a sphere with radius {rad} is {answerVS}')
                     break 
             except:
-                print ("Invalid Input. Please enter correct input: ")
+                print ("Invalid Input. Please enter correct input.\n ")
         return None 
 
 def Vcube():
@@ -64,14 +64,14 @@ def Vcube():
         try:
             side=float(side)
             if side <= 0: 
-                print ("Invalid Input. Please enter correct input: ")
+                print ("Invalid Input. Please enter correct input.\n ")
             else:
                 answerVC= side**3
                 answerVC=round(answerVC,2)
                 print (f'The volume of a cube with a side of {side} is {answerVC}')
                 break
         except:
-                print ("Invalid Input. Please enter correct input: ")
+                print ("Invalid Input. Please enter correct input.\n ")
     return None
 
 def VrecPri():
@@ -85,13 +85,13 @@ def VrecPri():
             w=float(w)
             h=float(h)
             if l<=0 or w<=0 or h<=0:
-                print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
+                print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.\n')
             else:
                 answerVRP= round(l*h*w,2)
-                print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
+                print(f'\nThe surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
                 break 
         except:
-            print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
+            print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers\n')
 
 def Vcone():
     print ("We will calculate the volume of your cone!")
@@ -102,13 +102,13 @@ def Vcone():
             rad=float(rad)
             height=float(height)
             if rad <= 0 or height <= 0:
-                print ("Invalid Input(s). Please enter correct input(s): ")
+                print ("Invalid Input(s). Please enter correct input(s).\n ")
             else:
                 answerVCone= round(math.pi * (rad **2)* (height/3),2)
                 print (f'The volume of a cone with a radius of {rad} and a height of {height} is {answerVCone}. ')
                 break
         except:
-                print ("Invalid Input(s). Please enter correct input(s): ")
+                print ("Invalid Input(s). Please enter correct input(s).\n ")
 
 def SA_Cone():
     print('\nWe will calculate the surface area of your cone!\nYou will need to input 2 positive values\nfor the radius of the base, and height.')
@@ -155,65 +155,65 @@ def SA_RecPrism():
             w=float(w)
             h=float(h)
             if l<=0 or w<=0 or h<=0:
-                print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
+                print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.\n')
                 break
             answerSAP=2 * (l*w+l*h+w*h)
             answerSAP=round(answerSAP,2)
-            print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerSAP}')
+            print(f'The surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerSAP}\n')
             break
         except:
-            print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.')
+            print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.\n')
 
 def SA_Sphere():
     print('\nWe will calculate the surface area of a sphere.\nYou will need to input 1 positive value for the radius.')
     while True: 
-        rad= input("Please input your radius, it must be a positive value: ")
+        rad= input("\nPlease input your radius, it must be a positive value: ")
         try:
             rad=float(rad)
             if rad <= 0: 
-                print ("Invalid Input. Please enter valid input: ")
+                print ("Invalid Input. Please enter valid input.\n")
             else:
                 answerSAS= 4 * math.pi* (rad ** 2)
                 answerSAS=round(answerSAS,2)
-                print (f'The surface area of a sphere with radius {rad} is {answerSAS}')
+                print (f'\nThe surface area of a sphere with radius {rad} is {answerSAS}')
                 break
         except:
-            print ("Invalid Input. Please enter valid input: ")
+            print ("Invalid Input. Please enter valid input.\n")
 
 def PyTheorem():
-    print('We will find the missing side length of a right\ntriangle using the pythagorean theorem. You\nmust input 2 positive values.')
+    print('We will find the missing side length of a right\ntriangle using the pythagorean theorem. You\nmust input 2 positive values.\n')
     while True:
         length=input('Are you looking for the hypotenuse, which is\nthe side opposite to the right angle? Yes/No: ')
         length=length.lower()
         length=length.replace(' ','')
         if length=='yes':
-            side1=input('What is the first side length: ')
-            side2=input('What is the second side length: ')
+            side1=input('\nWhat is the first side length: ')
+            side2=input('\nWhat is the second side length: ')
             try:
                 side1=float(side1)
                 side2=float(side2)
                 if side1 <= 0 or side2<= 0: 
-                    print ("Invalid Input(s). Please enter valid input: ")
+                    print ("\nInvalid Input(s). Please enter valid input: ")
                 else:
                     hyp= round(math.sqrt(side1**2+side2**2,2))
-                    print(f'The hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.')
+                    print(f'\nThe hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.\n')
                     break
             except:
                 print('Invalid inputs')
         elif length=='no':
-            hyp=input('What is the hypotenuse length: ')
-            side1=input('What is the known side length: ')
+            hyp=input('\nWhat is the hypotenuse length: ')
+            side1=input('\nWhat is the known side length: ')
             try:
                 hyp=float(hyp)
                 side1=float(side1)
                 if side1 <= 0 or hyp<= 0: 
-                    print ("Invalid Input(s). Please enter valid input: ")
+                    print ("\nInvalid Input(s). Please enter valid input.")
                 else:
                     side2=round(math.sqrt(hyp**2-side1**2),2)
-                    print(f'The missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
+                    print(f'\nThe missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
                     break
             except:
-                print('Invalid input(s).')
+                print('\nInvalid input(s).')
         else:
             print('Invalid answer, you must input either yes or no.')
 
