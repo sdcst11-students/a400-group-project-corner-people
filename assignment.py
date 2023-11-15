@@ -5,7 +5,7 @@
 import math 
 
 def title():
-    titlePage='\033[1;32m\n\n   Kimby\'s Python Calculator\n      By: Ruby and Kimmie\n          Calculates:'
+    titlePage='\033[1;32m\n\n   Kimby\'s Python Calculator\n      By: Ruby and Kimmy\n          Calculates:'
     calculators='\033[1;34m\n            Volume,\n         Surface Area,\n           And More!\n'
     print(titlePage,calculators)
     return None
@@ -26,8 +26,8 @@ def instructions():
 def start(): #Player chooses which function to execute
     while True:
         Ins='\033[1;31;40m Type a number to commence the specific function.\n:'
-        VC='\033[1;31;40m  \n  Volume Calculations:\n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
-        SAC='\033[1;31;40m  \n\nSurface Area Calculations:\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
+        VC='\033[1;32;40m Volume Calculations: \n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
+        SAC='\033[1;32;40m  \n\nSurface Area Calculations: \n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
         PT='\033[1;31;40m  \n\nPythagorean Theorem==>9\n'
         TotalInstructions=VC+SAC+PT+Ins
         choice=input(TotalInstructions)
