@@ -31,6 +31,8 @@ def start(): #Player chooses which function to execute
         PT='\033[1;31;40m  \n\nPythagorean Theorem==>9\n'
         TotalInstructions=VC+SAC+PT+Ins
         choice=input(TotalInstructions)
+        if choice=='quit':
+            break
         try:
             choice=int(choice)
             if 0<choice<=9:
@@ -88,7 +90,7 @@ def VrecPri():
                 print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.\n')
             else:
                 answerVRP= round(l*h*w,2)
-                print(f'\nThe surface area of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
+                print(f'\nThe volume of a rectangular prism with side lengths {l}, {w}, and {h} is {answerVRP}')
                 break 
         except:
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers\n')
@@ -232,14 +234,14 @@ def main():
         functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Sphere,SA_cube,SA_RecPrism,SA_Cone,PyTheorem)
         functionList[choice]()
         while True: #Asks whether you want to continue or end your session
-            end=input('\nDo you wish to end your session? yes or no: ')
+            end=input('\nDo you wish to continue your session? yes or no: ')
             end=end.lower()
             end=end.replace(' ','')
-            if end=='yes':
+            if end=='no':
                 x=False
                 print('\nYou have ended your session.')
                 break
-            elif end=='no':
+            elif end=='yes':
                 break
             else:
                 print('Invalid Input')
