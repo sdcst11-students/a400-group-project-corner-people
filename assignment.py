@@ -193,12 +193,12 @@ def PyTheorem():
             try:
                 side1=float(side1)
                 side2=float(side2)
-                if side1 <= 0 or side2<= 0: 
-                    print ("\nInvalid Input(s). Please enter valid input: ")
-                else:
+                if side1>0 and side2>0:
                     hyp= round(math.sqrt(side1**2+side2**2,2))
                     print(f'\nThe hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.\n')
                     break
+                else:
+                    print ("\nInvalid Input(s). Please enter valid input: ")
             except:
                 print('Invalid inputs')
         elif length=='no':
@@ -207,12 +207,12 @@ def PyTheorem():
             try:
                 hyp=float(hyp)
                 side1=float(side1)
-                if side1 <= 0 or hyp<= 0: 
-                    print ("\nInvalid Input(s). Please enter valid input.")
-                else:
+                if side1>0 and hyp>side1:
                     side2=round(math.sqrt(hyp**2-side1**2),2)
                     print(f'\nThe missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
                     break
+                else: 
+                    print ("\nInvalid Input(s). Please enter valid input.")
             except:
                 print('\nInvalid input(s).')
         else:
