@@ -131,7 +131,7 @@ def SA_Cone():
                 print ("Invalid Input(s). Please enter valid number(s).\n ")
 
 def SA_cube():
-    print('\nWe will calculate the surface area of your cube! \n')
+    print('\033[1;36;40m\nWe will calculate the surface area of your cube! \n')
     while True: 
         side= input("Please input your side, it must be a positive number: ")
         try:
@@ -146,7 +146,7 @@ def SA_cube():
                 print ("Invalid Input. Please enter valid number\n ")
 
 def SA_RecPrism():
-    print('\nWe will calculate the surface area of a rectangular prism.\nYou will need to input 3 positive values for the length,\nwidth, and height:')
+    print('\033[1;37;40m\nWe will calculate the surface area of a rectangular prism.\nYou will need to input 3 positive values for the length,\nwidth, and height:')
     while True:
         l=input('What is the length of your prism?\n')
         w=input('What is the width of your prism?\n')
@@ -166,7 +166,7 @@ def SA_RecPrism():
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.\n')
 
 def SA_Sphere():
-    print('\nWe will calculate the surface area of a sphere.\nYou will need to input 1 positive value for the radius.\n')
+    print('\033[1;35;40m\nWe will calculate the surface area of a sphere.\nYou will need to input 1 positive value for the radius.\n')
     while True: 
         rad= input("Please input your radius, it must be a positive value: ")
         try:
@@ -182,7 +182,7 @@ def SA_Sphere():
             print ("Invalid Input. Please enter valid input.\n")
 
 def PyTheorem():
-    print('We will find the missing side length of a right\ntriangle using the pythagorean theorem. You\nmust input 2 positive values.\n')
+    print('\033[1;33;40m\nWe will find the missing side length of a right\ntriangle using the pythagorean theorem. You\nmust input 2 positive values.\n')
     while True:
         length=input('Are you looking for the hypotenuse, which is\nthe side opposite to the right angle? Yes/No: ')
         length=length.lower()
@@ -193,30 +193,30 @@ def PyTheorem():
             try:
                 side1=float(side1)
                 side2=float(side2)
-                if side1 <= 0 or side2<= 0: 
+                if side1<=0 or side2<=0:
                     print ("\nInvalid Input(s). Please enter valid input: ")
                 else:
-                    hyp= round(math.sqrt(side1**2+side2**2,2))
+                    hyp= round(math.sqrt(side1**2+side2**2),2)
                     print(f'\nThe hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.\n')
-                    break
             except:
                 print('Invalid inputs')
+
         elif length=='no':
             hyp=input('\nWhat is the hypotenuse length: ')
             side1=input('\nWhat is the known side length: ')
             try:
                 hyp=float(hyp)
                 side1=float(side1)
-                if side1 <= 0 or hyp<= 0: 
-                    print ("\nInvalid Input(s). Please enter valid input.")
-                else:
+                if side1>0 and hyp>side1:
                     side2=round(math.sqrt(hyp**2-side1**2),2)
                     print(f'\nThe missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
                     break
+                else: 
+                    print ("\nInvalid Input(s). Please enter valid input.")
             except:
                 print('\nInvalid input(s).')
         else:
-            print('Invalid answer, you must input either yes or no.')
+            print('Invalid answer, you must input either yes or no.\n')
 
 def main():
     """
