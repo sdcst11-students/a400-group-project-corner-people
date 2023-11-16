@@ -5,7 +5,7 @@
 import math 
 
 def title():
-    titlePage='\033[1;32m\n\n   Kimby\'s Python Calculator\n      By: Ruby and Kimmy\n          Calculates:'
+    titlePage='\033[1;32m\n\n   Kimby\'s Python Calculator\n      By: Ruby and Kimmie\n          Calculates:'
     calculators='\033[1;34m\n            Volume,\n         Surface Area,\n           And More!\n'
     print(titlePage,calculators)
     return None
@@ -13,25 +13,28 @@ def title():
 def instructions():
     while True:
         instructions = input("\033[1;35;40mDo you want the instructions? yes or no: ").lower().replace(" ", "")
+
         if instructions == "no":
            print ("Alright, lets go!")
-           break 
+           return True 
         elif instructions== "yes":
            print ("These are the instructions! The program will ask you what you want to calculate\nThen, it will ask you the inputs needed.\nLet's Go! ")
-           break 
-        else: 
+           return True 
+        elif instructions=='quit': 
+            return False
+        else:
            print ("Invalid input. Please enter yes or no")
-    return None
 
 def start(): #Player chooses which function to execute
     while True:
         Ins='\033[1;31;40m Type a number to commence the specific function.\n:'
-        VC='\033[1;32;40m Volume Calculations: \n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
-        SAC='\033[1;32;40m  \n\nSurface Area Calculations: \n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
+        VC='\033[1;31;40m  \n  Volume Calculations:\n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
+        SAC='\033[1;31;40m  \n\nSurface Area Calculations:\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
         PT='\033[1;31;40m  \n\nPythagorean Theorem==>9\n'
         TotalInstructions=VC+SAC+PT+Ins
-        choice=input(TotalInstructions)
+        choice=input(TotalInstructions).lower().replace(' ','')
         if choice=='quit':
+            x=False
             break
         try:
             choice=int(choice)
@@ -228,23 +231,11 @@ def main():
     """
     x=True
     title()
-    instructions()
+    x=instructions()
     while x==True: 
         choice=start()
         functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Sphere,SA_cube,SA_RecPrism,SA_Cone,PyTheorem)
         functionList[choice]()
-        while True: #Asks whether you want to continue or end your session
-            end=input('\nDo you wish to continue your session? yes or no: ')
-            end=end.lower()
-            end=end.replace(' ','')
-            if end=='no':
-                x=False
-                print('\nYou have ended your session.')
-                break
-            elif end=='yes':
-                break
-            else:
-                print('Invalid Input')
 
 
 if __name__ == "__main__":
