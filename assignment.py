@@ -34,8 +34,8 @@ def start(): #Player chooses which function to execute
         TotalInstructions=VC+SAC+PT+Ins
         choice=input(TotalInstructions).lower().replace(' ','')
         if choice=='quit':
-            x=False
-            break
+            False
+            return 'quit'
         try:
             choice=int(choice)
             if 0<choice<=9:
@@ -234,8 +234,11 @@ def main():
     x=instructions()
     while x==True: 
         choice=start()
-        functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Sphere,SA_cube,SA_RecPrism,SA_Cone,PyTheorem)
-        functionList[choice]()
+        if choice=='quit':
+            break
+        else:
+            functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Sphere,SA_cube,SA_RecPrism,SA_Cone,PyTheorem)
+            functionList[choice]()
 
 
 if __name__ == "__main__":
