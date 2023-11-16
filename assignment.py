@@ -28,11 +28,21 @@ def instructions():
 def start(): #Player chooses which function to execute
     while True:
         Ins='\033[1;31;40m Type a number to commence the specific function.\n:'
+<<<<<<< HEAD
         VC='\033[1;31;40m  \n  Volume Calculations:\n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
         SAC='\033[1;31;40m  \n\nSurface Area Calculations:\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
         PT='\033[1;31;40m  \n\nPythagorean Theorem==>9\n'
         TotalInstructions=VC+SAC+PT+Ins
         choice=input(TotalInstructions).lower().replace(' ','')
+=======
+        VC='\033[1;32;40m Volume Calculations: ' 
+        Vcho = '\033[1;30;40m \n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
+        SAC='\033[1;32;40m \n\nSurface Area Calculations: '
+        SAcho= '\033[1;30;40m\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
+        PT='\033[1;31;40m  \n\nPythagorean Theorem==>9\n'
+        TotalInstructions=VC+Vcho+SAC+SAcho+PT+Ins
+        choice=input(TotalInstructions)
+>>>>>>> a2c465fb21f8415e240a850647b26a038086d315
         if choice=='quit':
             False
             return 'quit'
