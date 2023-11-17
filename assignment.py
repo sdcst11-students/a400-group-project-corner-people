@@ -18,7 +18,7 @@ def instructions():
            print ("Alright, lets go!")
            return True 
         elif instructions== "yes":
-           print ("These are the instructions! The program will ask you what you want to calculate\nThen, it will ask you the inputs needed.\nLet's Go! ")
+           print ("These are the instructions! The program will ask you what you want to calculate\nThen, it will ask you the inputs needed.\n\033[1;31;40mIf you would like to quit at any time, type \"quit\"\nLet's Go! ")
            return True 
         elif instructions=='quit': 
             return False
@@ -28,23 +28,14 @@ def instructions():
 def start(): #Player chooses which function to execute
     while True:
         Ins='\033[1;31;40m Type a number to commence the specific function.\n:'
-<<<<<<< HEAD
-        VC='\033[1;31;40m  \n  Volume Calculations:\n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
-        SAC='\033[1;31;40m  \n\nSurface Area Calculations:\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
-        PT='\033[1;31;40m  \n\nPythagorean Theorem==>9\n'
-        TotalInstructions=VC+SAC+PT+Ins
-        choice=input(TotalInstructions).lower().replace(' ','')
-=======
         VC='\033[1;32;40m Volume Calculations: ' 
         Vcho = '\033[1;30;40m \n           Sphere==>1\n             Cube==>2\nRectangular Prism==>3\n             Cone==>4'
         SAC='\033[1;32;40m \n\nSurface Area Calculations: '
         SAcho= '\033[1;30;40m\n               Sphere==>5\n                 Cube==>6\n    Rectangular Prism==>7\n                 Cone==>8'
         PT='\033[1;31;40m  \n\nPythagorean Theorem==>9\n'
         TotalInstructions=VC+Vcho+SAC+SAcho+PT+Ins
-        choice=input(TotalInstructions)
->>>>>>> a2c465fb21f8415e240a850647b26a038086d315
+        choice=input(TotalInstructions).lower().replace(' ','')
         if choice=='quit':
-            False
             return 'quit'
         try:
             choice=int(choice)
@@ -60,6 +51,7 @@ def start(): #Player chooses which function to execute
 def Vsphere():
         while True: 
             rad= input("\033[1;37;44m \nWe will calculate the volume of your sphere! \nPlease input your radius, it must be a positive number: ")
+            
             try:
                 rad=float(rad) 
                 if rad <= 0: 
