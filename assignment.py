@@ -7,7 +7,8 @@ import math
 def title():
     titlePage='\033[1;32m\n\n   Kimby\'s Python Calculator\n      By: Ruby and Kimmie\n          Calculates:'
     calculators='\033[1;34m\n            Volume,\n         Surface Area,\n           And More!\n'
-    print(titlePage,calculators)
+    quit ="\033[1;31;40mIf you would like to quit at any time, type \"quit\"\n Let's Go!"
+    print(titlePage,calculators,quit)
     return None
 
 def instructions():
@@ -18,7 +19,7 @@ def instructions():
            print ("Alright, lets go!")
            return True 
         elif instructions== "yes":
-           print ("These are the instructions! The program will ask you what you want to calculate\nThen, it will ask you the inputs needed.\n\033[1;31;40mIf you would like to quit at any time, type \"quit\"\nLet's Go! ")
+           print ("These are the instructions! The program will ask you what you want to calculate\nThen, it will ask you the inputs needed.\n")
            return True 
         elif instructions=='quit': 
             return False
@@ -114,17 +115,14 @@ def VrecPri():
 
 def Vcone():
     print ("\033[1;30;40m We will calculate the volume of your cone!")
-    rad= input("Please input the radius of the base, it must be a positive number: ").lower().replace(' ','')
-    if rad=='quit':
-        return False
-    height=input("Please input the height of the cone: ").lower().replace(' ','')
-    if height=='quit':
-        return False
+
     while True: 
-        rad= input('What is the radius of your cone?\n').lower().replace(' ','')
-        height= input('What is the height of your cone?\n').lower().replace(' ','')
-        if rad=='quit' or height=='quit':
-            return False
+        rad= input("Please input the radius of the base, it must be a positive number: ").lower().replace(' ','')
+        if rad=='quit':
+                    return False
+        height=input("Please input the height of the cone: ").lower().replace(' ','')
+        if height=='quit':
+                return False
         try:
             rad=float(rad)
             height=float(height)
@@ -249,6 +247,7 @@ def PyTheorem():
                 else:
                     hyp= round(math.sqrt(side1**2+side2**2),2)
                     print(f'\nThe hypotenuse of a triangle with known side lengths of {side1} and {side2} is {hyp}.\n')
+                return True
             except:
                 print('Invalid inputs')
 
@@ -265,14 +264,13 @@ def PyTheorem():
                 if side1>0 and hyp>side1:
                     side2=round(math.sqrt(hyp**2-side1**2),2)
                     print(f'\nThe missing side length of a triangle with known side of {side1} and hypotenuse of {hyp} is {side2}.')
-                    break
+                    return True
                 else: 
                     print ("\nInvalid Input(s). Please enter valid input.")
             except:
                 print('\nInvalid input(s).')
         else:
             print('Invalid answer, you must input either yes or no.\n')
-    return True 
 
 def main():
     """
