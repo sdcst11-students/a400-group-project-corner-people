@@ -50,8 +50,10 @@ def start(): #Player chooses which function to execute
 #these are all the specific calculation functions 
 def Vsphere():
         while True: 
-            rad= input("\033[1;37;44m \nWe will calculate the volume of your sphere! \nPlease input your radius, it must be a positive number: ")
-            
+            rad=input("\033[1;37;44m \nWe will calculate the volume of your sphere! \nPlease input your radius, it must be a positive number: ")
+            rad=rad.lower().replace(' ','')
+            if rad=='quit':
+                return False
             try:
                 rad=float(rad) 
                 if rad <= 0: 
@@ -63,11 +65,14 @@ def Vsphere():
                     break 
             except:
                 print ("Invalid Input. Please enter correct input.\n ")
-        return None 
+        return True 
 
 def Vcube():
     while True: 
         side= input("\033[1;33;40m\nWe will calculate the volume of your cube! \nPlease input your side, it must be a positive number: ")
+        side=side.lower().replace(' ','')
+        if side=='quit':
+            return False
         try:
             side=float(side)
             if side <= 0: 
@@ -79,14 +84,20 @@ def Vcube():
                 break
         except:
                 print ("Invalid Input. Please enter correct input.\n ")
-    return None
+    return True
 
 def VrecPri():
-    print("\033[1;32;40m We will calculate the volume of your rectangular prism!")
+    print("\033[1;32;40mWe will calculate the volume of your rectangular prism!")
     while True: 
-        l=input('What is the length of your prism?\n')
-        w=input('What is the width of your prism?\n')
-        h=input('What is the height of your prism?\n')
+        l=input('What is the length of your prism?\n').lower().replace(' ','')
+        if l=='quit':
+            return False
+        w=input('What is the width of your prism?\n').lower().replace(' ','')
+        if w=='quit':
+            return False
+        h=input('What is the height of your prism?\n').lower().replace(' ','')
+        if h=='quit':
+            return False
         try:
             l=float(l)
             w=float(w)
@@ -99,12 +110,21 @@ def VrecPri():
                 break 
         except:
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers\n')
+    return True 
 
 def Vcone():
     print ("\033[1;30;40m We will calculate the volume of your cone!")
+    rad= input("Please input the radius of the base, it must be a positive number: ").lower().replace(' ','')
+    if rad=='quit':
+        return False
+    height=input("Please input the height of the cone: ").lower().replace(' ','')
+    if height=='quit':
+        return False
     while True: 
-        rad= input('What is the radius of your cone?\n')
-        height= input('What is the height of your cone?\n')
+        rad= input('What is the radius of your cone?\n').lower().replace(' ','')
+        height= input('What is the height of your cone?\n').lower().replace(' ','')
+        if rad=='quit' or height=='quit':
+            return False
         try:
             rad=float(rad)
             height=float(height)
@@ -116,13 +136,17 @@ def Vcone():
                 break
         except:
                 print ("Invalid Input(s). Please enter correct input(s).\n ")
+    return True 
 
 def SA_Cone():
     print('\033[1;32;40m\nWe will calculate the surface area of your cone!\nYou will need to input 2 positive values\nfor the radius of the base, and height.')
-
     while True: 
-        rad= input("Please input the radius of the base, it must be a positive number: ")
-        height=input("Please input the height of the cone: ")
+        rad= input("Please input the radius of the base, it must be a positive number: ").lower().replace(' ','')
+        if rad=='quit':
+            return False
+        height=input("Please input the height of the cone: ").lower().replace(' ','')
+        if height=='quit':
+            return False
         try:
             rad=float(rad)
             height=float(height)
@@ -136,11 +160,14 @@ def SA_Cone():
                 break
         except:
                 print ("Invalid Input(s). Please enter valid number(s).\n ")
+    return True 
 
 def SA_cube():
     print('\033[1;36;40m\nWe will calculate the surface area of your cube! \n')
     while True: 
-        side= input("Please input your side, it must be a positive number: ")
+        side= input("Please input your side, it must be a positive number: ").lower().replace(' ','')
+        if side=='quit':
+            return False
         try:
             side=float(side)
             if side <= 0: 
@@ -151,13 +178,20 @@ def SA_cube():
                 break
         except:
                 print ("Invalid Input. Please enter valid number\n ")
+    return True 
 
 def SA_RecPrism():
     print('\033[1;37;40m\nWe will calculate the surface area of a rectangular prism.\nYou will need to input 3 positive values for the length,\nwidth, and height:')
     while True:
-        l=input('What is the length of your prism?\n')
-        w=input('What is the width of your prism?\n')
-        h=input('What is the height of your prism?\n')
+        l=input('What is the length of your prism?\n').lower().replace(' ','')
+        if l=='quit':
+            return False
+        w=input('What is the width of your prism?\n').lower().replace(' ','')
+        if w=='quit':
+            return False
+        h=input('What is the height of your prism?\n').lower().replace(' ','')
+        if h=='quit':
+            return False
         try:
             l=float(l)
             w=float(w)
@@ -171,11 +205,15 @@ def SA_RecPrism():
                 break
         except:
             print('Atleast one of your inputs is invalid.\nPlease input 3 positive numbers.\n')
+    return True 
 
 def SA_Sphere():
     print('\033[1;35;40m\nWe will calculate the surface area of a sphere.\nYou will need to input 1 positive value for the radius.\n')
     while True: 
         rad= input("Please input your radius, it must be a positive value: ")
+        rad=rad.lower().replace(' ','')
+        if rad=='quit':
+            return False
         try:
             rad=float(rad)
             if rad <= 0: 
@@ -187,16 +225,20 @@ def SA_Sphere():
                 break
         except:
             print ("Invalid Input. Please enter valid input.\n")
+    return True
 
 def PyTheorem():
     print('\033[1;33;40m\nWe will find the missing side length of a right\ntriangle using the pythagorean theorem. You\nmust input 2 positive values.\n')
     while True:
         length=input('Are you looking for the hypotenuse, which is\nthe side opposite to the right angle? Yes/No: ')
-        length=length.lower()
-        length=length.replace(' ','')
+        length=length.lower().replace(' ','')
+        if length=='quit':
+            return False
         if length=='yes':
-            side1=input('\nWhat is the first side length: ')
-            side2=input('\nWhat is the second side length: ')
+            side1=input('\nWhat is the first side length: ').lower().replace()
+            side2=input('\nWhat is the second side length: ').lower().replace()
+            if side1=='quit' or side2=='quit':
+                return False
             try:
                 side1=float(side1)
                 side2=float(side2)
@@ -209,8 +251,10 @@ def PyTheorem():
                 print('Invalid inputs')
 
         elif length=='no':
-            hyp=input('\nWhat is the hypotenuse length: ')
-            side1=input('\nWhat is the known side length: ')
+            hyp=input('\nWhat is the hypotenuse length: ').lower().replace()
+            side1=input('\nWhat is the known side length: ').lower().replace()
+            if side1=='quit' or hyp=='quit':
+                return False
             try:
                 hyp=float(hyp)
                 side1=float(side1)
@@ -224,6 +268,7 @@ def PyTheorem():
                 print('\nInvalid input(s).')
         else:
             print('Invalid answer, you must input either yes or no.\n')
+    return True 
 
 def main():
     """
@@ -233,14 +278,15 @@ def main():
     """
     x=True
     title()
-    x=instructions()
+    #x=instructions()
     while x==True: 
         choice=start()
         if choice=='quit':
             break
         else:
             functionList=('nil',Vsphere,Vcube,VrecPri,Vcone,SA_Sphere,SA_cube,SA_RecPrism,SA_Cone,PyTheorem)
-            functionList[choice]()
+            x=functionList[choice]()
+            
 
 
 if __name__ == "__main__":
