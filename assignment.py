@@ -235,9 +235,11 @@ def PyTheorem():
         if length=='quit':
             return False
         if length=='yes':
-            side1=input('\nWhat is the first side length: ').lower().replace()
-            side2=input('\nWhat is the second side length: ').lower().replace()
-            if side1=='quit' or side2=='quit':
+            side1=input('\nWhat is the first side length: ').lower().replace(' ','')
+            if side1=='quit':
+                return False
+            side2=input('\nWhat is the second side length: ').lower().replace(' ','')
+            if side2=='quit':
                 return False
             try:
                 side1=float(side1)
@@ -251,9 +253,11 @@ def PyTheorem():
                 print('Invalid inputs')
 
         elif length=='no':
-            hyp=input('\nWhat is the hypotenuse length: ').lower().replace()
-            side1=input('\nWhat is the known side length: ').lower().replace()
-            if side1=='quit' or hyp=='quit':
+            hyp=input('\nWhat is the hypotenuse length: ').lower().replace(' ','')
+            if hyp=='quit':
+                return False
+            side1=input('\nWhat is the known side length: ').lower().replace(' ','')
+            if side2=='quit':
                 return False
             try:
                 hyp=float(hyp)
@@ -278,7 +282,7 @@ def main():
     """
     x=True
     title()
-    #x=instructions()
+    x=instructions()
     while x==True: 
         choice=start()
         if choice=='quit':
